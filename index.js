@@ -12,14 +12,10 @@ app.use(express.json());
 app.use(express.urlencoded());
 
 mongoose
-  // .connect(process.env.MONGO_URL
-  .connect(
-    'mongodb+srv://geet:Gsiva139@geet-cluster1.fopbkm4.mongodb.net/chat-application-system',
-    {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    }
-  )
+  .connect(process.env.MONGO_URL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
   .then(() => {
     console.log('DB Connetion Successfull');
   })
